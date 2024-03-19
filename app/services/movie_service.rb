@@ -1,8 +1,6 @@
 class MovieService
   def top_movies
-    movies = get_url("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc")
-    filtered_holidays = parse_and_filter_holidays(holidays)
-    sorted_holidays = sort_holidays_by_date(filtered_holidays).take(3)
+    get_url("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc").take(20)
   end
 
   def get_url(url)
