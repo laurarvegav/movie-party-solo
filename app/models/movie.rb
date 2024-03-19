@@ -3,6 +3,6 @@ class Movie < ApplicationRecord
                         :vote,
                         :runtime,
                         :genre
-   
+
   has_many :viewing_parties
 end
