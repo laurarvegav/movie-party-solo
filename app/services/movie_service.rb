@@ -1,20 +1,29 @@
 class MovieService
-  def top_movies
-    get_url("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc").take(20)[1][1]
+  def get_url(kind, url)
+    response = connection(kind).get(url)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
-  def get_url(url)
-    response = mov.get(url)
-    body = JSON.parse(response.body, symbolize_names: true)
-  end
-
-  def mov
-    Faraday.new(url: "https://api.themoviedb.org/3/dicover/movie") do |faraday|
+  def connection(kind)
+    uri = uri_kind(kind)
+    Faraday.new(url: "https://api.themoviedb.org/3#{uri}") do |faraday|
       faraday.params["api_key"] = Rails.application.credentials.tmbd[:key]
     end
   end
 
+  def top_movies
+    get_url("top", "?sort_by=popularity.desc")
+  end
+
   def find_movie_by_name(string)
-    get_url("https://api.themoviedb.org/3/search/keyword?query=#{string}").take(20)[1][1]
+    get_url("name", "?query=#{string}")
+  end
+
+  def uri_kind(kind)
+    if kind == "top"
+      "/discover/movie"
+    elsif kind == "name"
+      "/search/keyword"
+    end
   end
 end
