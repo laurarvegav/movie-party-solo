@@ -24,12 +24,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Wed, 20 Mar 2024 02:08:30 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=20689
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -38,6 +34,10 @@ http_interactions:
       - '4267'
       X-Memc-Expires:
       - '20689'
+      Date:
+      - Wed, 20 Mar 2024 20:46:07 GMT
+      Cache-Control:
+      - public, max-age=22930
       Etag:
       - W/"f8a14cc75a676e5f8aa78318e64a5a5e"
       Vary:
@@ -46,19 +46,19 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9204cf44179493ed42c678800a26918a.cloudfront.net (CloudFront)
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - MyJvnpla4lgG2E1ixzhOXhMYwipiBPMjf8Fu7IEPaCUhb1BpMnIV9g==
+      - cs7ac90nbdaLrh5B7PZ_rKzG8q6eoDVZG3NPN-jEtCREO8FLmvtfPQ==
       Age:
-      - '319'
+      - '7435'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"id":284723,"name":"kung fu okulu"},{"id":780,"name":"kung
         fu"},{"id":14934,"name":"shaolin kung fu"},{"id":250944,"name":"kung foo"},{"id":185466,"name":"kung
         fu master"},{"id":301323,"name":"animal kung fu"}],"total_pages":1,"total_results":6}'
-  recorded_at: Wed, 20 Mar 2024 02:13:49 GMT
+  recorded_at: Wed, 20 Mar 2024 22:50:02 GMT
 recorded_with: VCR 6.2.0
