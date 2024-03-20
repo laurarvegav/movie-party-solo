@@ -23,9 +23,19 @@ RSpec.describe 'movies discover', type: :feature do
     end
 
     #Sad Path Testing, Feature 1
-    it 'responds to incomplete information in the text field' do
+    it 'responds to empty information in the text field' do
       visit user_discover_index_path(@user_tommy.id)
       fill_in(:movie_title, with: "")
+      click_button("Find Movies")
+
+      expect(current_path).to eq(user_discover_index_path(@user_tommy.id))
+
+      expect(page).to have_content("Error: Try a different movie title")
+    end
+
+    it 'responds to unexisting movie name in the text field' do
+      visit user_discover_index_path(@user_tommy.id)
+      fill_in(:movie_title, with: "Z Men")
       click_button("Find Movies")
 
       expect(current_path).to eq(user_discover_index_path(@user_tommy.id))
