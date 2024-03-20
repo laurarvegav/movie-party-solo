@@ -1,0 +1,8 @@
+<h1>Viewing Party</h1>
+
+<%= button_to "Discover Page", user_discover_index_path(@facade.user.id), method: :get %>
+
+<% @facade.movies.each do |movie|%>
+  <p><%= link_to "#{movie.title}", user_movie_path(@facade.user.id, movie.id) %>
+  Vote average: <%= movie.vote %><br></p>
+<% end %>
