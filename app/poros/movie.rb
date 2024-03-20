@@ -1,15 +1,17 @@
 class Movie
-  validates_presence_of :name,
-                        :vote,
-                        :runtime,
-                        :genre,
-                        :id
+  attr_reader :name,
+              :vote,
+              :runtime,
+              :genre,
+              :id,
+              :summary
 
   def initialize(data)
-    @name = data["name"]
-    @vote = data["vote"]
+    @name = data["original_title"]
+    @vote = data["vote_average"]
     @runtime = data["runtime"]
     @genre = data["genre"]
     @id = data["id"]
+    @summary = data["overview"]
   end
 end
