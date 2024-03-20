@@ -7,5 +7,5 @@
 
 <%= form_with(url: user_movies_path(@user.id), local: true, method: :get) do |f| %>
   <%= f.text_field :movie_title %>
-  <%= f.button "Find Movies" %>
+  <%= f.submit "Find Movies" %>
 <% end %>
