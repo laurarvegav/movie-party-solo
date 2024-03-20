@@ -10,7 +10,7 @@ class MovieService
 
   def mov
     Faraday.new(url: "https://api.themoviedb.org/3/discover/movie") do |faraday|
-      faraday.headers["api_key"] = Rails.application.credentials.movies_api_key
+      faraday.headers["api_key"] = "Bearer #{Rails.application.credentials.movies_api_key}"
     end
   end
 end
