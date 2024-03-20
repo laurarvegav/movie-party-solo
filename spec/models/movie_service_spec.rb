@@ -5,7 +5,13 @@ RSpec.describe MovieService do
     it "gets URL, populating API records into JSON", :vcr do
       url = "https://api.themoviedb.org/3/discover/movie"
 
-      parsed_movie = MovieService.new.get_url(url)
+      parsed_movie = MovieService.new.get_url("top", url)
+
+      expect(parsed_movie[:results].first).to be_a(Hash)
+      expect(parsed_movie[:results].first[:title]).to be_a(String)
+      expect(parsed_movie[:results].first[:vote_average]).to be_a(Float)
+
+      parsed_movie = MovieService.new.get_url("name", url)
 
       expect(parsed_movie[:results].first).to be_a(Hash)
       expect(parsed_movie[:results].first[:title]).to be_a(String)
@@ -13,24 +19,18 @@ RSpec.describe MovieService do
     end
 
     it "returns the top 20 movies", :vcr do
-      parsed_movie_results = MovieService.new.top_movies
+      parsed_movie = MovieService.new.top_movies
 
-      expect(parsed_movie_results.first).to be_a(Hash)
-      expect(parsed_movie_results.length).to eq(20)
+      expect(parsed_movie[:results].first).to be_a(Hash)
+      expect(parsed_movie[:results].length).to eq(20)
     end
 
-    it "finds a movie by keyword name", :vcr do
+    it "finds an array of movies by keyword name", :vcr do
       keyword = "kung"
       parsed_movie = MovieService.new.find_movie_by_name(keyword)
-      
-      expect(parsed_movie.first).to be_a(Hash)
-      expect(parsed_movie.length).to be_between(1, 20)
-      expect(parsed_movie).to eq([{:id=>284723, :name=>"kung fu okulu"},
-      {:id=>780, :name=>"kung fu"},
-      {:id=>14934, :name=>"shaolin kung fu"},
-      {:id=>250944, :name=>"kung foo"},
-      {:id=>185466, :name=>"kung fu master"},
-      {:id=>301323, :name=>"animal kung fu"}])
+
+      expect(parsed_movie[:results].length).to be_between(1, 20)
+      expect(parsed_movie[:results]).to be_an(Array)
     end
   end
 end
