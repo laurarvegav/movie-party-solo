@@ -28,7 +28,7 @@ RSpec.describe 'New viewing party page', type: :feature do
       # - Duration of Party with a default value of movie runtime in minutes; a viewing party should NOT be created if set to a value less than the duration of the movie
       expect(page).to have_field("Party Duration:")
       default = find("#party_duration").value
-      expect(default).to eq("1hr 34min")
+      expect(default).to eq("94")
       # - When: field to select date
       expect(page).to have_field("date", type: "date")
       # - Start Time: field to select time
@@ -39,7 +39,35 @@ RSpec.describe 'New viewing party page', type: :feature do
       expect(page).to have_content('Meg(meg@turing.edu)')
       expect(page).to have_content('Erin(erin@turing.edu)')
       # - Button to create a party
+      expect(page).to have_button("Create Party")
+    end
+
+    #Sad Path Testing, Feature 4
+    it 'responds to set duration when that is less than the movie runtime', :vcr do
+      visit new_user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id)
+      fill_in("party_duration", with: "60")
+      fill_in("date", with: "04/01/2024")
+      expect(page).to have_field("date", type: "date")
+      expect(page).to have_field("Select Time")
       click_button("Create Party")
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id))
+
+      expect(page).to have_content("Error: Party duration needs to cover at least the movie runtime")
+    end
+
+    #Sad Path Testing, Feature 4
+    it 'responds to empty selected date', :vcr do
+      visit new_user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id)
+      fill_in("party_duration", with: "94")
+      fill_in("date", with: "")
+      expect(page).to have_field("date", type: "date")
+      expect(page).to have_field("Select Time")
+      click_button("Create Party")
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id))
+
+      expect(page).to have_content("Error: Party date can't be empty")
     end
   end
 end
