@@ -1,7 +1,7 @@
 class Movie
   attr_reader :title,
               :vote,
-              :runtime,
+              :raw_runtime,
               :genre,
               :id,
               :summary
@@ -11,14 +11,14 @@ class Movie
     @title = data[:original_title]
     @vote = data[:vote_average].round(2)
     @summary = data[:overview]
-    @runtime = format_runtime(data[:runtime])
+    @raw_runtime = data[:runtime]
     @genre = format_genre(data[:genres])
   end
 
-  def format_runtime(data)
-    if data != nil
-      hours = data / 60
-      minutes = data % 60
+  def runtime
+    if @raw_runtime != nil
+      hours = @raw_runtime / 60
+      minutes = @raw_runtime % 60
     
       formatted_runtime = ""
       formatted_runtime += "#{hours}hr " if hours > 0
