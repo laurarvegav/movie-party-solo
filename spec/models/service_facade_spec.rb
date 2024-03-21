@@ -21,4 +21,27 @@ RSpec.describe ServiceFacade do
     expect(@facade_movie_title.movies.first.id).to eq(1011985)
     expect(@facade_movie_id.movies.title).to eq("Kung Fu Panda 4")
   end
+
+  it 'returns movie cast data in array of hashes', :vcr do
+    expect(@facade_movie_id.movie_cast).to eq([
+      { name: "Jack Black", character: "Po (voice)" },
+      { name: "Awkwafina", character: "Zhen (voice)" },
+      { name: "Bryan Cranston", character: "Li (voice)" },
+      { name: "Viola Davis", character: "The Chameleon (voice)" },
+      { name: "Dustin Hoffman", character: "Shifu (voice)" },
+      { name: "James Hong", character: "Mr. Ping (voice)" },
+      { name: "Ian McShane", character: "Tai Lung (voice)" },
+      { name: "Ke Huy Quan", character: "Han (voice)" },
+      { name: "Ronny Chieng", character: "Fish (voice)" },
+      { name: "Lori Tan Chinn", character: "Granny Boar (voice)" }
+    ])
+  end
+
+  it 'returns movie review data in array of hashes', :vcr do
+    expect(@facade_movie_id.movie_review).to eq([
+      { author: "Chris Sawin",
+        content: "_Kung Fu Panda 4_ isn’t the best _Kung Fu Panda_ film, or even the best of the series’ three sequels. However, as a fourth film in a franchise, it’s a ton of fun.\r\n\r\nAnd though it’s action isn’t quite as entertaining as its predecessors and it’s unfortunate to see Awkwafina playing yet another thief (_Jumanji: The Next Level_ says hello), for the most part, _Kung Fu Panda 4_ happily skadooshes its way to animated greatness.\r\n\r\n**Full review:** https://bit.ly/KuFuPa4"
+      }
+    ])
+  end
 end
