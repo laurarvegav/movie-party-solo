@@ -32,5 +32,14 @@ RSpec.describe MovieService do
       expect(parsed_movie[:results].length).to be_between(1, 20)
       expect(parsed_movie[:results]).to be_an(Array)
     end
+
+    it "finds an array of movies by id", :vcr do
+      id = 1011985
+      parsed_movie = MovieService.new.find_movie_by_id(id)
+
+      expect(parsed_movie[:results].length).to eq(1)
+      expect(parsed_movie[:results]).to be_a(Movie)
+      expect(parsed_movie[:results].name).to eq("Kung Fu Panda 4")
+    end
   end
 end
