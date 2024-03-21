@@ -4,26 +4,11 @@ RSpec.describe Movie do
   before do
     @data_movie = {
       genres: [
-        {
-          id: 28,
-          name: "Action"
-        },
-        {
-          id: 12,
-          name: "Adventure"
-        },
-        {
-          id: 16,
-          name: "Animation"
-        },
-        {
-          id: 35,
-          name: "Comedy"
-        },
-        {
-          id: 10751,
-          name: "Family"
-        }
+        { id: 28, name: "Action" },
+        { id: 12, name: "Adventure" },
+        { id: 16, name: "Animation" },
+        { id: 35, name: "Comedy" },
+        {id: 10751, name: "Family" }
       ],
       id: 1011985,
       original_title: "Kung Fu Panda 4",
@@ -33,46 +18,16 @@ RSpec.describe Movie do
     }
 
     @data_cast = [
-      {
-        name: "Jack Black",
-        character: "Po (voice)",
-      },
-      {
-        name: "Awkwafina",
-        character: "Zhen (voice)",
-      },
-      {
-        name: "Bryan Cranston",
-        character: "Li (voice)",
-      },
-      {
-        name: "Viola Davis",
-        character: "The Chameleon (voice)",
-      },
-      {
-        name: "Dustin Hoffman",
-        character: "Shifu (voice)",
-      },
-      {
-        name: "James Hong",
-        character: "Mr. Ping (voice)",
-      },
-      {
-        name: "Ian McShane",
-        character: "Tai Lung (voice)",
-      },
-      {
-        name: "Ke Huy Quan",
-        character: "Han (voice)",
-      },
-      {
-        name: "Ronny Chieng",
-        character: "Fish (voice)",
-      },
-      {
-        name: "Lori Tan Chinn",
-        character: "Granny Boar (voice)",
-      }
+      { name: "Jack Black", character: "Po (voice)" },
+      { name: "Awkwafina", character: "Zhen (voice)" },
+      { name: "Bryan Cranston", character: "Li (voice)" },
+      { name: "Viola Davis", character: "The Chameleon (voice)" },
+      { name: "Dustin Hoffman", character: "Shifu (voice)" },
+      { name: "James Hong", character: "Mr. Ping (voice)" },
+      { name: "Ian McShane", character: "Tai Lung (voice)" },
+      { name: "Ke Huy Quan", character: "Han (voice)" },
+      { name: "Ronny Chieng", character: "Fish (voice)" },
+      { name: "Lori Tan Chinn", character: "Granny Boar (voice)" }
     ]
 
     @data_reviews = [
@@ -83,6 +38,15 @@ RSpec.describe Movie do
     ]
 
     @movie_kfp = Movie.new(@data_movie)
+
+    @incomplete_data_movie = {
+      id: 1011985,
+      original_title: "Kung Fu Panda 4",
+      overview: "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
+      vote_average: 6.894,
+    }
+
+    @movie_inc = Movie.new(@incomplete_data_movie)
   end
 
   describe ".initialize" do
@@ -96,6 +60,10 @@ RSpec.describe Movie do
       expect(@movie_kfp.title).to eq('Kung Fu Panda 4')
       expect(@movie_kfp.vote).to eq(6.89)
       expect(@movie_kfp.summary).to eq('Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.')
+    end
+
+    it 'exists even when data[:runtime] and/or data[:genres] is not complete' do
+      expect(@movie_inc).to be_a(Movie)
     end
   end
   
