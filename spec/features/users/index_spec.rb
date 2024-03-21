@@ -24,7 +24,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       # I should also see a button to return to the Discover Page.
       click_button("Discover Page")
       expect(current_path).to eq(user_discover_index_path(@user_tommy.id))
-save_and_open_page
+      
       fill_in(:movie_title, with: "Kung")
       click_button("Find Movies")
       expect(current_path).to eq(user_movies_path(@user_tommy.id))
