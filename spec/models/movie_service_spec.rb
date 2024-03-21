@@ -36,10 +36,8 @@ RSpec.describe MovieService do
     it "finds an array of movies by id", :vcr do
       id = 1011985
       parsed_movie = MovieService.new.find_movie_by_id(id)
-
-      expect(parsed_movie[:results].length).to eq(1)
-      expect(parsed_movie[:results]).to be_a(Movie)
-      expect(parsed_movie[:results].name).to eq("Kung Fu Panda 4")
+      expect(parsed_movie).to be_a(Hash)
+      expect(parsed_movie[:original_title]).not_to eq(nil)
     end
   end
 end

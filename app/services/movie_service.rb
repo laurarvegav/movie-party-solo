@@ -20,7 +20,7 @@ class MovieService
   end
 
   def find_movie_by_id(id)
-    get_url("id", "/#{id}")
+    get_url("id", "#{id}")
   end
 
   def uri_kind(kind)
