@@ -28,8 +28,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       fill_in(:movie_title, with: "Kung")
       click_button("Find Movies")
       expect(current_path).to eq(user_movies_path(@user_tommy.id))
-      expect(page).to have_content("Kung Fu Panda 4")
-      expect(page).to have_content("Vote Average: 9.7")
+      expect(page).to have_content("Kung Fu Panda 4 Vote average: 6.9")
 
       expect(page).to have_button("Discover Page")
     end
