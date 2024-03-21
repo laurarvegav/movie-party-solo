@@ -16,24 +16,28 @@ class Movie
   end
 
   def format_runtime(data)
-    hours = data / 60
-    minutes = data % 60
-  
-    formatted_runtime = ""
-    formatted_runtime += "#{hours}hr " if hours > 0
-    formatted_runtime += "#{minutes}min" if minutes > 0
-  
-    formatted_runtime.strip
+    if data != nil
+      hours = data / 60
+      minutes = data % 60
+    
+      formatted_runtime = ""
+      formatted_runtime += "#{hours}hr " if hours > 0
+      formatted_runtime += "#{minutes}min" if minutes > 0
+    
+      formatted_runtime.strip
+    end
   end
 
   def format_genre(data)
-    data.map do |genre|
-      genre[:name]
-    end.join(", ")
+    if data != nil
+      data.map do |genre|
+        genre[:name]
+      end.join(", ")
+    end
   end
 
   def cast(data)
-    cast = {}
+    cast = Hash.new("")
     data.each do |member|
       cast[member[:character]] = member[:name]
     end
