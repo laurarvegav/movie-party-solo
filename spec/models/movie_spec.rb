@@ -59,6 +59,7 @@ RSpec.describe Movie do
       expect(@movie_kfp.id).to eq(1011985)
       expect(@movie_kfp.title).to eq('Kung Fu Panda 4')
       expect(@movie_kfp.vote).to eq(6.89)
+      expect(@movie_kfp.raw_runtime).to eq(94)
       expect(@movie_kfp.summary).to eq('Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.')
     end
 
@@ -67,8 +68,8 @@ RSpec.describe Movie do
     end
   end
   
-  describe 'format_runtime' do
-    it 'formats runtime to format xhr xxmin' do
+  describe 'runtime' do
+    it 'formats raw runtime to format xhr xxmin' do
       expect(@movie_kfp.runtime).to eq('1hr 34min')
     end
   end
