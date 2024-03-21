@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1011985/reviews?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 21 Mar 2024 09:00:12 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=20377
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 3b0f4337a20b5cbab730985b41d8903b
+      X-Memc-Age:
+      - '6369'
+      X-Memc-Expires:
+      - '20377'
+      Etag:
+      - W/"1503c3ec6e9a12d3058b4ce89841143d"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - blJlzbpHuxgDA4EI0CEkjoKoqIkeSAwkhurLEefVK-afji-JjgvKbQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6MTAxMTk4NSwicGFnZSI6MSwicmVzdWx0cyI6W3siYXV0aG9yIjoiQ2hyaXMgU2F3aW4iLCJhdXRob3JfZGV0YWlscyI6eyJuYW1lIjoiQ2hyaXMgU2F3aW4iLCJ1c2VybmFtZSI6IkNocmlzU2F3aW4iLCJhdmF0YXJfcGF0aCI6bnVsbCwicmF0aW5nIjo2LjB9LCJjb250ZW50IjoiX0t1bmcgRnUgUGFuZGEgNF8gaXNu4oCZdCB0aGUgYmVzdCBfS3VuZyBGdSBQYW5kYV8gZmlsbSwgb3IgZXZlbiB0aGUgYmVzdCBvZiB0aGUgc2VyaWVz4oCZIHRocmVlIHNlcXVlbHMuIEhvd2V2ZXIsIGFzIGEgZm91cnRoIGZpbG0gaW4gYSBmcmFuY2hpc2UsIGl04oCZcyBhIHRvbiBvZiBmdW4uXHJcblxyXG5BbmQgdGhvdWdoIGl04oCZcyBhY3Rpb24gaXNu4oCZdCBxdWl0ZSBhcyBlbnRlcnRhaW5pbmcgYXMgaXRzIHByZWRlY2Vzc29ycyBhbmQgaXTigJlzIHVuZm9ydHVuYXRlIHRvIHNlZSBBd2t3YWZpbmEgcGxheWluZyB5ZXQgYW5vdGhlciB0aGllZiAoX0p1bWFuamk6IFRoZSBOZXh0IExldmVsXyBzYXlzIGhlbGxvKSwgZm9yIHRoZSBtb3N0IHBhcnQsIF9LdW5nIEZ1IFBhbmRhIDRfIGhhcHBpbHkgc2thZG9vc2hlcyBpdHMgd2F5IHRvIGFuaW1hdGVkIGdyZWF0bmVzcy5cclxuXHJcbioqRnVsbCByZXZpZXc6KiogaHR0cHM6Ly9iaXQubHkvS3VGdVBhNCIsImNyZWF0ZWRfYXQiOiIyMDI0LTAzLTEzVDEzOjIzOjQxLjc1NVoiLCJpZCI6IjY1ZjFhOGRkZmE0MDQ2MDEyZTExMjFiNiIsInVwZGF0ZWRfYXQiOiIyMDI0LTAzLTEzVDEzOjIzOjQxLjkwOVoiLCJ1cmwiOiJodHRwczovL3d3dy50aGVtb3ZpZWRiLm9yZy9yZXZpZXcvNjVmMWE4ZGRmYTQwNDYwMTJlMTEyMWI2In1dLCJ0b3RhbF9wYWdlcyI6MSwidG90YWxfcmVzdWx0cyI6MX0=
+  recorded_at: Thu, 21 Mar 2024 09:00:12 GMT
+recorded_with: VCR 6.2.0
