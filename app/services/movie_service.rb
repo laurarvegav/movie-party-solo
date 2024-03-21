@@ -19,11 +19,17 @@ class MovieService
     get_url("name", "?query=#{string}")
   end
 
+  def find_movie_by_id(id)
+    get_url("id", "/#{id}")
+  end
+
   def uri_kind(kind)
     if kind == "top"
       "/discover/movie"
     elsif kind == "name"
       "/search/movie"
+    elsif kind == "id"
+      "/movie"
     end
   end
 end
