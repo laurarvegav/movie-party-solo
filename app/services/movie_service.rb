@@ -23,6 +23,14 @@ class MovieService
     get_url("id", "#{id}")
   end
 
+  def find_movie_credits(id)
+    get_url("id", "#{id}/credits")
+  end
+
+  def find_movie_reviews(id)
+    get_url("id", "#{id}/reviews")
+  end
+
   def uri_kind(kind)
     if kind == "top"
       "/discover/movie"
