@@ -23,7 +23,6 @@ RSpec.describe 'New viewing party page', type: :feature do
     it 'shows the name of the movie, duration of party (default to movie runtime and condition for it to be bigger than that runtime), and a form for details', :vcr do
       # When I visit the new viewing party page ('/users/:user_id/movies/:movie_id/viewing_party/new', where :user_id is a valid user's id and :movie_id is a valid Movie id from the API),
       visit new_user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id)
-      save_and_open_page
       # I should see the name of the movie title rendered above a form with the following fields:
       expect(page).to have_content("Kung Fu Panda 4")
       # - Duration of Party with a default value of movie runtime in minutes; a viewing party should NOT be created if set to a value less than the duration of the movie
@@ -40,7 +39,8 @@ RSpec.describe 'New viewing party page', type: :feature do
       expect(page).to have_content('Meg(meg@turing.edu)')
       expect(page).to have_content('Erin(erin@turing.edu)')
       # - Button to create a party
-      expect(page).to have_button("Create Party")
+      click_button("Create Party")
+      expect(current_path).to eq(user_movie_viewing_party_path(user_id: @user_tommy.id, movie_id: @movie_kfp.id, id: 35))
     end
   end
 end
