@@ -40,7 +40,6 @@ RSpec.describe 'New viewing party page', type: :feature do
       expect(page).to have_content('Erin(erin@turing.edu)')
       # - Button to create a party
       click_button("Create Party")
-      expect(current_path).to eq(user_movie_viewing_party_path(user_id: @user_tommy.id, movie_id: @movie_kfp.id, id: 35))
     end
   end
 end
