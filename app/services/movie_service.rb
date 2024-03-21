@@ -23,7 +23,7 @@ class MovieService
     if kind == "top"
       "/discover/movie"
     elsif kind == "name"
-      "/search/keyword"
+      "/search/movie"
     end
   end
 end
