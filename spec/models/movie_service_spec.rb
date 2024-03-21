@@ -36,8 +36,25 @@ RSpec.describe MovieService do
     it "finds an array of movies by id", :vcr do
       id = 1011985
       parsed_movie = MovieService.new.find_movie_by_id(id)
+      
       expect(parsed_movie).to be_a(Hash)
       expect(parsed_movie[:original_title]).not_to eq(nil)
+    end
+
+    it "finds movie credits with movie id", :vcr do
+      id = 1011985
+      parsed_credits = MovieService.new.find_movie_credits(id)
+
+      expect(parsed_credits).to be_a(Hash)
+      expect(parsed_credits[:cast]).to be_an(Array)
+    end
+
+    it "finds movie reviews with movie id", :vcr do
+      id = 1011985
+      parsed_reviews = MovieService.new.find_movie_reviews(id)
+
+      expect(parsed_reviews).to be_a(Hash)
+      expect(parsed_reviews[:results]).to be_an(Array)
     end
   end
 end
