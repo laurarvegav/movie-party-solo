@@ -1,10 +1,16 @@
 class ServiceFacade
-  attr_reader :user
-              :movie_title
+  attr_reader :user,
+              :movie_title,
+              :movie_id
 
-  def initialize(user, movie_title=nil)
+  def initialize(user, movie = false)
     @user = user
-    @movie_title = movie_title
+
+    if movie =!nil && movie.class == String
+      @movie_title = movie
+    elsif movie =!nil && movie.class == Integer
+      @movie_id = movie
+    end
   end
 
   def movies
@@ -12,6 +18,8 @@ class ServiceFacade
 
     if @movie_title != nil
       json = service.find_movie_by_name(@movie_title)
+    elsif @movie_id != nil
+      json = service.find_movie_by_id(@movie_id)
     else
       json = service.top_movies
     end
