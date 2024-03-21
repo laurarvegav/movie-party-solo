@@ -1,26 +1,26 @@
 <h1>Viewing Party</h1>
 
-<%= button_to "Discover Page", user_discover_index_path(@facade.user.id), method: :get %>
+<%= button_to "Discover Page", user_discover_index_path(@user.id), method: :get %>
 
 <h3>Viewing Party Details</h3>
-Movie Title <%= @movie.title %>
+Movie Title <%= @facade_movie.title %>
 
 <%= form_with( url: user_path(@user.id), method: :create, data: {turbo: false}, local: true) do |f| %>
 
-  <%= f.label :party_duration %>
+  <%= f.label :party_duration, "Party Duration: " %>
   <!runtime in minutes!!!!!!>
-  <%= f.text_field :party_duration, value: @movie.runtime %><br>
+  <%= f.text_field :party_duration, value: @facade_movie.runtime %><br>
 
-  <%= f.label for="select_date">Select_Date: %>
-  <%= f.input type="date" id="date" name="date" %>
+  <%= f.label "select_date", "Select Date: " %>
+  <%= f.date_field :select_date, id: "date" %><br>
 
-  <%= f.label :start_time %>
-  <%= f.text_field :start_time, value: "#{7:00}" %><br>
+  <%= f.label :start_time, "Select Time" %>
+  <%= f.text_field :start_time, value: "7:00" %><br>
 
   <h4>Invite Other Users</h4>
-  <%= @guests.each do |guest| %>
-    <%= f.input type="checkbox" id: "guest_1" name: "@guest" value: "#{guest.id}"%>
-    <%= f.label for="guest_1"> "#{guest.name}"%><br>
+  <% @guests.each do |guest| %>
+    <%= f.check_box :guest_1, { multiple: true }, guest.id, nil %>
+    <%= f.label "guest_#{guest.id}", "#{guest.name}(#{guest.email})" %><br>
   <% end %>
 
   <%= f.submit "Create Party"%>
