@@ -1,0 +1,15 @@
+<h1>Viewing Party </h1>
+
+<%= button_to "Discover Page", user_discover_index_path(@user.id), method: :get %>
+
+<h3>Buy the movie here:</h3>
+<% @move.buy_providers.each do |provider| %>
+<%= provider.image%>
+<% end %>
+
+<h3>Rent the movie here:</h3>
+<% @movie.rent_providers.each do |provider| %>
+<%= provider.image%>
+<% end %>
+
+<footer>Buy/Rent data provided by JustWatch</footer>
