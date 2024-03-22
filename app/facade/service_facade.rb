@@ -73,22 +73,31 @@ class ServiceFacade
 
     json = service.find_movie_providers(@movie_id)
 
-    cast = { buy: {}, rent: {} } # Initialize buy and rent as empty hashes
+    cast = { buy: {}, rent: {} }
     json[:results].each do |provider_data|
       buy_data = Array(provider_data[1][:buy])
       rent_data = Array(provider_data[1][:rent])
       buy_data.each do |buy|
-        if buy.is_a?(Hash) # Check if buy is a Hash
-          cast[:buy][buy[:provider_name]] = "https://media.themoviedb.org/t/p/original/#{buy[:logo_path]}" if buy.key?(:provider_name) && buy.key?(:logo_path)
+        if buy.is_a?(Hash)
+          cast[:buy][buy[:provider_name]] = "https://media.themoviedb.org/t/p/original#{buy[:logo_path]}" if buy.key?(:provider_name) && buy.key?(:logo_path)
         end
       end
 
       rent_data.each do |rent|
-        if rent.is_a?(Hash) # Check if rent is a Hash
-          cast[:rent][rent[:provider_name]] = "https://media.themoviedb.org/t/p/original/#{rent[:logo_path]}" if rent.key?(:provider_name) && rent.key?(:logo_path)
+        if rent.is_a?(Hash)
+          cast[:rent][rent[:provider_name]] = "https://media.themoviedb.org/t/p/original#{rent[:logo_path]}" if rent.key?(:provider_name) && rent.key?(:logo_path)
         end
       end
     end
     cast
+  end
+
+  def find_similar_movies
+    service = MovieService.new
+
+    json = service.find_similar_movies(@movie_id)
+    json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
   end
 end
