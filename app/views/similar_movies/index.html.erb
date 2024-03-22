@@ -1,0 +1,12 @@
+<h1><%=@movie.title%>'s Similar Movies</h1>
+
+<% @movies.each do |movie| %>
+  <div id=<%=movie.id%>>
+    Title: <%= movie.title %><br>
+    Overview: <%= movie.overview %>
+    Release Date: <%= movie.release_date %>
+    Poster: <%= image_tag(movie.poster_path) %><br>
+    Vote Average: <%= movie.vote %><br>
+  </div>
+<% end %>
+</p>
