@@ -97,7 +97,7 @@ class ServiceFacade
 
     json = service.find_similar_movies(@movie_id)
     json[:results].map do |movie_data|
-      Movie.new(movie_data)
+      SimilarMovie.new(movie_data)
     end
   end
 end
