@@ -44,4 +44,12 @@ RSpec.describe ServiceFacade do
       }
     ])
   end
+
+  it 'returns movie providers data in hash of hashes', :vcr do
+    expect(@facade_movie_id.find_movie_providers).to eq(
+      { buy: { "Cineplex" => "https://media.themoviedb.org/t/p/original/d1mUAhpJpxy0YMjwVOZ4lxAAbeT.jpg" },
+        rent: {}
+      }
+    )
+  end
 end
