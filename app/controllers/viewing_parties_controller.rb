@@ -26,4 +26,9 @@ class ViewingPartiesController < ApplicationController
       redirect_to user_movie_viewing_party_path(user_id: params[:user_id], movie_id: params[:movie_id], id: @viewing_party.id)
     end
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    @movie = ServiceFacade.new(user, params[:movie_id].to_i).movies
+  end
 end
