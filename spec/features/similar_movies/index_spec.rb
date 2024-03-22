@@ -24,14 +24,14 @@ RSpec.describe 'Similar movies page', type: :feature do
       @movie_lwm = SimilarMovie.new(@data_movie_lwm)
     end
 
-    # User story 5
+    # User story 6
     it 'displays a a list of movies that are similar to the one provided by :movie_id with details and image', :vcr do
       # As a user, When I visit a Movie Details page (`/users/:user_id/movies/:movie_id`),
       visit user_movie_path(@user_tommy.id, @movie_kfp.id)
       # I see a link for "Get Similar Movies"
       # When I click that link
       click_link("Get Similar Movies")
-  save_and_open_page
+
       # I am taken to the Similar Movies page (`/users/:user_id/movies/:movie_id/similar`)
       expect(current_path).to eq(user_movie_similar_index_path(@user_tommy.id, @movie_kfp.id))
       # Where I see a list of movies that are similar to the one provided by :movie_id, 
