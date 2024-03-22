@@ -20,6 +20,7 @@ RSpec.describe ServiceFacade do
     expect(@facade_movie_title.movies.all? {|movie| movie.class == Movie}).to eq(true)
     expect(@facade_movie_title.movies.first.id).to eq(1011985)
     expect(@facade_movie_id.movies.title).to eq("Kung Fu Panda 4")
+    expect(@facade_movie_id.movies.poster_path).to eq("https://media.themoviedb.org/t/p/original/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg")
   end
 
   it 'returns movie cast data in array of hashes', :vcr do

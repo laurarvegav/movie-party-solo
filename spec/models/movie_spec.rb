@@ -14,7 +14,8 @@ RSpec.describe Movie do
       original_title: "Kung Fu Panda 4",
       overview: "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
       vote_average: 6.894,
-      runtime: 94
+      runtime: 94,
+      poster_path: "/dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg"
     }
 
     @data_cast = [
@@ -61,6 +62,7 @@ RSpec.describe Movie do
       expect(@movie_kfp.vote).to eq(6.89)
       expect(@movie_kfp.raw_runtime).to eq(94)
       expect(@movie_kfp.summary).to eq('Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.')
+      expect(@movie_kfp.poster_path).to eq("https://media.themoviedb.org/t/p/original/dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg")
     end
 
     it 'exists even when data[:runtime] and/or data[:genres] is not complete' do
