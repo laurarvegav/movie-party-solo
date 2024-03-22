@@ -65,5 +65,13 @@ RSpec.describe MovieService do
       expect(parsed_providers).to be_a(Hash)
       expect(parsed_providers[:results]).to be_a(Hash)
     end
+
+    it 'finds similar movies given movie id', :vcr do
+      id = 1011985
+      parsed_similar = MovieService.new.find_similar_movies(id)
+
+      expect(parsed_similar[:results]).to be_an(Array)
+      expect(parsed_similar[:results].first).to be_a(Hash)
+    end
   end
 end
