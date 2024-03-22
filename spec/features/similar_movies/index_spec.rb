@@ -12,16 +12,16 @@ RSpec.describe 'Similar movies page', type: :feature do
       }
 
       @data_movie_lwm = {
-      id: 74854,
+      id: 14854,
       original_title: "Lone Wolf McQuade",
       overview: "The archetypical renegade Texas Ranger wages war against a drug kingpin with automatic weapons, his wits and martial arts after a gun battle leaves his partner dead. All of this inevitably culminates in a martial arts showdown between the drug lord and the ranger, and involving the woman they both love.",
-      vote_average: 6.894,
-      poster_path: "https://media.themoviedb.org/t/p/original//dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg",
+      vote_average: 6.503,
+      poster_path: "https://media.themoviedb.org/t/p/original/dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg",
       release_date: "1983-04-15"
       }
 
       @movie_kfp = Movie.new(@data_movie_kfp)
-      @movie_lwm = Movie.new(@data_movie_lwm)
+      @movie_lwm = SimilarMovie.new(@data_movie_lwm)
     end
 
     # User story 5
@@ -31,21 +31,22 @@ RSpec.describe 'Similar movies page', type: :feature do
       # I see a link for "Get Similar Movies"
       # When I click that link
       click_link("Get Similar Movies")
+  save_and_open_page
       # I am taken to the Similar Movies page (`/users/:user_id/movies/:movie_id/similar`)
       expect(current_path).to eq(user_movie_similar_index_path(@user_tommy.id, @movie_kfp.id))
       # Where I see a list of movies that are similar to the one provided by :movie_id, 
       expect(page).to have_content("#{@movie_kfp.title}'s Similar Movies")
       # which includes the similar movies': 
-      within(".movie-#{@movie_lwm.id}") do
+      within("#movie-#{@movie_lwm.id}") do
         # - Title
         expect(page).to have_content(@movie_lwm.title)
         # - Overview
-        expect(page).to have_content(@movie_lwm.overview)
+        expect(page).to have_content(@movie_lwm.summary)
         # - Release Date
         expect(page).to have_content(@movie_lwm.release_date)
         # - Poster image
         # - Vote Average
-        expect(page).to have_content(@movie_lwm.vote_average)
+        expect(page).to have_content(@movie_lwm.vote)
       end
     end
   end
