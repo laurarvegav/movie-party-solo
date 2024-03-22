@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
    def new
       @user = User.new
    end
@@ -18,9 +17,6 @@ class UsersController < ApplicationController
          redirect_to register_user_path
       end   
    end
-
-
-
 
 private
 

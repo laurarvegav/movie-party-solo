@@ -4,7 +4,8 @@ class Movie
               :raw_runtime,
               :genre,
               :id,
-              :summary
+              :summary,
+              :poster_path
 
   def initialize(data)
     @id = data[:id]
@@ -13,6 +14,7 @@ class Movie
     @summary = data[:overview]
     @raw_runtime = data[:runtime]
     @genre = format_genre(data[:genres])
+    @poster_path = "https://media.themoviedb.org/t/p/original#{data[:poster_path]}"
   end
 
   def runtime
