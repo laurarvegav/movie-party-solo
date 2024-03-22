@@ -11,7 +11,7 @@ RSpec.describe 'Movie detail page', type: :feature do
       vote_average: 6.894,
       }
 
-      @movie_kfp = Movie.new(@_data_movie)
+      @movie_kfp = Movie.new(@data_movie)
     end
 
     # User Story #3
