@@ -25,39 +25,39 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 21 Mar 2024 08:01:08 GMT
+      - Fri, 22 Mar 2024 04:27:53 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=7835
+      - public, max-age=10939
       X-Memc:
       - HIT
       X-Memc-Key:
       - ccf05165fa7a39f820d96a98dd1845c8
       X-Memc-Age:
-      - '15785'
+      - '17190'
       X-Memc-Expires:
-      - '7835'
+      - '10939'
       Etag:
-      - W/"950d38236594ed5c36b15b53b4100d1f"
+      - W/"b5c771df8181749f6980cb02a25c066a"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 39c272e966ab7a6f8a68d2222276a954.cloudfront.net (CloudFront)
+      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-C1
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - tzjTe9ZCEFqO7-5bJGQzbG-fcsvezcNpt90vrTK7oBtqs3OcJifM7g==
+      - OgUZlILwxqrz6DfLLD5qNlhFRlAQe6Q0wSIWOY0ymdaZ5Zs98Jxu8Q==
       Age:
-      - '629'
+      - '7147'
     body:
       encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/sJA8Nnnj547WTFwqHYNu0Y8BxHM.jpg","belongs_to_collection":{"id":77816,"name":"Kung
+      string: '{"adult":false,"backdrop_path":"/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg","belongs_to_collection":{"id":77816,"name":"Kung
         Fu Panda Collection","poster_path":"/2QT6PuYXY0T2Ry9rX0JKQYTrbwx.jpg","backdrop_path":"/uDosHOFFWtF5YteBRygHALFqLw2.jpg"},"budget":85000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":10751,"name":"Family"}],"homepage":"https://www.dreamworks.com/movies/kung-fu-panda-4","id":1011985,"imdb_id":"tt21692408","original_language":"en","original_title":"Kung
         Fu Panda 4","overview":"Po is gearing up to become the spiritual leader of
         his Valley of Peace, but also needs someone to take his place as Dragon Warrior.
@@ -67,6 +67,6 @@ http_interactions:
         Pictures","origin_country":"US"},{"id":214225,"logo_path":null,"name":"Pearl
         Studio","origin_country":"CN"}],"production_countries":[{"iso_3166_1":"CN","name":"China"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2024-03-02","revenue":176000000,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
-        Fu Panda 4","video":false,"vote_average":6.894,"vote_count":203}'
-  recorded_at: Thu, 21 Mar 2024 08:11:37 GMT
+        Fu Panda 4","video":false,"vote_average":6.912,"vote_count":220}'
+  recorded_at: Fri, 22 Mar 2024 06:27:00 GMT
 recorded_with: VCR 6.2.0
