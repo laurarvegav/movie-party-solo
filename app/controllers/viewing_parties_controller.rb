@@ -29,6 +29,6 @@ class ViewingPartiesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @movie = ServiceFacade.new(user, params[:movie_id].to_i).movies
+    @facade = ServiceFacade.new(@user, params[:movie_id].to_i)
   end
 end
