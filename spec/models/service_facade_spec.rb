@@ -57,6 +57,6 @@ RSpec.describe ServiceFacade do
   it "returns an array of similar movies given base movie's id", :vcr do
     expect(@facade_movie_id.find_similar_movies).to be_an(Array)
     expect(@facade_movie_id.find_similar_movies.all? {|movie| movie.class == SimilarMovie}).to eq(true)
-    expect(@facade_movie_id.find_similar_movies.first.id).to eq(14813)
+    expect(@facade_movie_id.find_similar_movies.first.id).to eq(826680)
   end
 end

@@ -28,7 +28,7 @@ RSpec.describe 'Movie detail page', type: :feature do
       # - Movie Title
       expect(page).to have_content('Kung Fu Panda 4')
       # - Vote Average of the movie
-      expect(page).to have_content("Vote: 6.95")
+      expect(page).to have_content("Vote: 6.86")
       # - Runtime in hours & minutes
       expect(page).to have_content("Runtime: 1hr 34min")
       # - Genre(s) associated to movie

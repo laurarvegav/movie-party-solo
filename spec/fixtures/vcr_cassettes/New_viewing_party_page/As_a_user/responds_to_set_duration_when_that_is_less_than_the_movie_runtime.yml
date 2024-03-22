@@ -25,36 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 22 Mar 2024 12:42:28 GMT
+      - Fri, 22 Mar 2024 15:50:17 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=8806
+      - public, max-age=19841
       X-Memc:
       - HIT
       X-Memc-Key:
       - ccf05165fa7a39f820d96a98dd1845c8
       X-Memc-Age:
-      - '18991'
+      - '1801'
       X-Memc-Expires:
-      - '8806'
+      - '19841'
       Etag:
-      - W/"642848d66b79b6a83f3c137afe029f30"
+      - W/"0ae2659249d9d8c0b703c2e09e877a15"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 7d885ba806a1846198f8b666005bec92.cloudfront.net (CloudFront)
+      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Agd_OOz0kkZeLC6pW53W0MpKx1XvNZ0TD7Zd5H9eXauZX68twnz_mw==
+      - 3-zS3H8Y11uYVnaEAWRko3fHUNhQ-TThusvD4UGdMv3Mh9F5N6YOtw==
       Age:
-      - '2033'
+      - '1151'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg","belongs_to_collection":{"id":77816,"name":"Kung
@@ -67,8 +67,8 @@ http_interactions:
         Pictures","origin_country":"US"},{"id":214225,"logo_path":null,"name":"Pearl
         Studio","origin_country":"CN"}],"production_countries":[{"iso_3166_1":"CN","name":"China"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2024-03-02","revenue":176000000,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
-        Fu Panda 4","video":false,"vote_average":6.9,"vote_count":224}'
-  recorded_at: Fri, 22 Mar 2024 13:16:21 GMT
+        Fu Panda 4","video":false,"vote_average":6.86,"vote_count":232}'
+  recorded_at: Fri, 22 Mar 2024 16:09:28 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/1011985?api_key=<API_KEY>
@@ -94,36 +94,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 22 Mar 2024 12:42:28 GMT
+      - Fri, 22 Mar 2024 15:50:17 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=8806
+      - public, max-age=19841
       X-Memc:
       - HIT
       X-Memc-Key:
       - ccf05165fa7a39f820d96a98dd1845c8
       X-Memc-Age:
-      - '18991'
+      - '1801'
       X-Memc-Expires:
-      - '8806'
+      - '19841'
       Etag:
-      - W/"642848d66b79b6a83f3c137afe029f30"
+      - W/"0ae2659249d9d8c0b703c2e09e877a15"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
+      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - "-aN4puU1Dgd5Zf2jIfXwFB4OA5lRVZHAVNtcQ47Zq0MXiZyAaYn20g=="
+      - vtkTs9ZXRPijuAz17KqLWfHJcWL0Z053cRTo09H61hTe6hKWB5Sd6A==
       Age:
-      - '2033'
+      - '1152'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg","belongs_to_collection":{"id":77816,"name":"Kung
@@ -136,8 +136,8 @@ http_interactions:
         Pictures","origin_country":"US"},{"id":214225,"logo_path":null,"name":"Pearl
         Studio","origin_country":"CN"}],"production_countries":[{"iso_3166_1":"CN","name":"China"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2024-03-02","revenue":176000000,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
-        Fu Panda 4","video":false,"vote_average":6.9,"vote_count":224}'
-  recorded_at: Fri, 22 Mar 2024 13:16:21 GMT
+        Fu Panda 4","video":false,"vote_average":6.86,"vote_count":232}'
+  recorded_at: Fri, 22 Mar 2024 16:09:28 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/1011985?api_key=<API_KEY>
@@ -163,36 +163,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 22 Mar 2024 12:42:28 GMT
+      - Fri, 22 Mar 2024 15:50:17 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=8806
+      - public, max-age=19841
       X-Memc:
       - HIT
       X-Memc-Key:
       - ccf05165fa7a39f820d96a98dd1845c8
       X-Memc-Age:
-      - '18991'
+      - '1801'
       X-Memc-Expires:
-      - '8806'
+      - '19841'
       Etag:
-      - W/"642848d66b79b6a83f3c137afe029f30"
+      - W/"0ae2659249d9d8c0b703c2e09e877a15"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
+      - 1.1 a47d45d25cc354507eae77aba89ca252.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - rJE5Iskiq1U5D2yJyZRepUrMt1MT7Gq4Lp_NW_I6spa2C6XziLnqgg==
+      - 7CBXRGsQEliR4KdZ2BF7axc2my8NEE28WiFOqP1BV3BjKOLsicRFwQ==
       Age:
-      - '2034'
+      - '1152'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg","belongs_to_collection":{"id":77816,"name":"Kung
@@ -205,6 +205,6 @@ http_interactions:
         Pictures","origin_country":"US"},{"id":214225,"logo_path":null,"name":"Pearl
         Studio","origin_country":"CN"}],"production_countries":[{"iso_3166_1":"CN","name":"China"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2024-03-02","revenue":176000000,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
-        Fu Panda 4","video":false,"vote_average":6.9,"vote_count":224}'
-  recorded_at: Fri, 22 Mar 2024 13:16:21 GMT
+        Fu Panda 4","video":false,"vote_average":6.86,"vote_count":232}'
+  recorded_at: Fri, 22 Mar 2024 16:09:29 GMT
 recorded_with: VCR 6.2.0

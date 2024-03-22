@@ -12,12 +12,11 @@ RSpec.describe 'Similar movies page', type: :feature do
       }
 
       @data_movie_lwm = {
-      id: 14854,
-      original_title: "Lone Wolf McQuade",
-      overview: "The archetypical renegade Texas Ranger wages war against a drug kingpin with automatic weapons, his wits and martial arts after a gun battle leaves his partner dead. All of this inevitably culminates in a martial arts showdown between the drug lord and the ranger, and involving the woman they both love.",
-      vote_average: 6.503,
+      id: 826680,
+      original_title: "Follow a group of children who are evacuated to a Yorkshire village during the Second World War, where they encounter a young soldier who, like them, is far away from home.",
+      vote_average: 6.820,
       poster_path: "https://media.themoviedb.org/t/p/original/dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg",
-      release_date: "1983-04-15"
+      release_date: "2022-07-15"
       }
 
       @movie_kfp = Movie.new(@data_movie_kfp)

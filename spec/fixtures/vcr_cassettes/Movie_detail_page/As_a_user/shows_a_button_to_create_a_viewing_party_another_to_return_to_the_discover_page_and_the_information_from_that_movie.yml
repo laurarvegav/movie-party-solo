@@ -2,6 +2,75 @@
 http_interactions:
 - request:
     method: get
+    uri: https://api.themoviedb.org/3/movie/1011985?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 22 Mar 2024 15:50:17 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=19841
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ccf05165fa7a39f820d96a98dd1845c8
+      X-Memc-Age:
+      - '1801'
+      X-Memc-Expires:
+      - '19841'
+      Etag:
+      - W/"0ae2659249d9d8c0b703c2e09e877a15"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - nBoEre60-UqSdqibZEZUMeuCcUx6t29scIBDyJvr2Zzqjl31AMrGWw==
+      Age:
+      - '1148'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg","belongs_to_collection":{"id":77816,"name":"Kung
+        Fu Panda Collection","poster_path":"/2QT6PuYXY0T2Ry9rX0JKQYTrbwx.jpg","backdrop_path":"/uDosHOFFWtF5YteBRygHALFqLw2.jpg"},"budget":85000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":10751,"name":"Family"}],"homepage":"https://www.dreamworks.com/movies/kung-fu-panda-4","id":1011985,"imdb_id":"tt21692408","original_language":"en","original_title":"Kung
+        Fu Panda 4","overview":"Po is gearing up to become the spiritual leader of
+        his Valley of Peace, but also needs someone to take his place as Dragon Warrior.
+        As such, he will train a new kung fu practitioner for the spot and will encounter
+        a villain called the Chameleon who conjures villains from the past.","popularity":5151.423,"poster_path":"/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg","production_companies":[{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"},{"id":214225,"logo_path":null,"name":"Pearl
+        Studio","origin_country":"CN"}],"production_countries":[{"iso_3166_1":"CN","name":"China"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2024-03-02","revenue":176000000,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
+        Fu Panda 4","video":false,"vote_average":6.86,"vote_count":232}'
+  recorded_at: Fri, 22 Mar 2024 16:09:25 GMT
+- request:
+    method: get
     uri: https://api.themoviedb.org/3/movie/1011985/credits?api_key=<API_KEY>
     body:
       encoding: US-ASCII
@@ -46,15 +115,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - mXN4De2iKmXqRb_3058yUQ_oOgRx9L5ZuLTGz8-KqGVJOgUP79UaKw==
+      - GCYyvR-mKYgjShzekt4EBMLfyBLame5K8OFAP0KWZNilgwkZVcGV1A==
       Age:
-      - '1501'
+      - '1148'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1011985,"cast":[{"adult":false,"gender":2,"id":70851,"known_for_department":"Acting","name":"Jack
@@ -163,5 +232,65 @@ http_interactions:
         Craddock","original_name":"Ellette Craddock","popularity":2.495,"profile_path":null,"credit_id":"6559dde2ea84c7109302c37d","department":"Crew","job":"Stunts"},{"adult":false,"gender":2,"id":4385234,"known_for_department":"Crew","name":"Shashwad
         Babalgaon","original_name":"Shashwad Babalgaon","popularity":1.01,"profile_path":"/9g565TMkCWZuuDw6Y7irMuoXXwJ.jpg","credit_id":"6559dd85d4fe0400ac385388","department":"Crew","job":"Stunt
         Coordinator"}]}'
-  recorded_at: Fri, 22 Mar 2024 16:15:18 GMT
+  recorded_at: Fri, 22 Mar 2024 16:09:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1011985/reviews?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 3b0f4337a20b5cbab730985b41d8903b
+      X-Memc-Age:
+      - '6369'
+      X-Memc-Expires:
+      - '20377'
+      Date:
+      - Fri, 22 Mar 2024 12:42:28 GMT
+      Cache-Control:
+      - public, max-age=24452
+      Etag:
+      - W/"1503c3ec6e9a12d3058b4ce89841143d"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 29f1da35ce271d2cdc88184ed0c1f86c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - rSKJUHQzpcyaKmWEqHxPQHoQLMqidncZkB1chZsnbhYkJlLX5B6-eQ==
+      Age:
+      - '12418'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6MTAxMTk4NSwicGFnZSI6MSwicmVzdWx0cyI6W3siYXV0aG9yIjoiQ2hyaXMgU2F3aW4iLCJhdXRob3JfZGV0YWlscyI6eyJuYW1lIjoiQ2hyaXMgU2F3aW4iLCJ1c2VybmFtZSI6IkNocmlzU2F3aW4iLCJhdmF0YXJfcGF0aCI6bnVsbCwicmF0aW5nIjo2LjB9LCJjb250ZW50IjoiX0t1bmcgRnUgUGFuZGEgNF8gaXNu4oCZdCB0aGUgYmVzdCBfS3VuZyBGdSBQYW5kYV8gZmlsbSwgb3IgZXZlbiB0aGUgYmVzdCBvZiB0aGUgc2VyaWVz4oCZIHRocmVlIHNlcXVlbHMuIEhvd2V2ZXIsIGFzIGEgZm91cnRoIGZpbG0gaW4gYSBmcmFuY2hpc2UsIGl04oCZcyBhIHRvbiBvZiBmdW4uXHJcblxyXG5BbmQgdGhvdWdoIGl04oCZcyBhY3Rpb24gaXNu4oCZdCBxdWl0ZSBhcyBlbnRlcnRhaW5pbmcgYXMgaXRzIHByZWRlY2Vzc29ycyBhbmQgaXTigJlzIHVuZm9ydHVuYXRlIHRvIHNlZSBBd2t3YWZpbmEgcGxheWluZyB5ZXQgYW5vdGhlciB0aGllZiAoX0p1bWFuamk6IFRoZSBOZXh0IExldmVsXyBzYXlzIGhlbGxvKSwgZm9yIHRoZSBtb3N0IHBhcnQsIF9LdW5nIEZ1IFBhbmRhIDRfIGhhcHBpbHkgc2thZG9vc2hlcyBpdHMgd2F5IHRvIGFuaW1hdGVkIGdyZWF0bmVzcy5cclxuXHJcbioqRnVsbCByZXZpZXc6KiogaHR0cHM6Ly9iaXQubHkvS3VGdVBhNCIsImNyZWF0ZWRfYXQiOiIyMDI0LTAzLTEzVDEzOjIzOjQxLjc1NVoiLCJpZCI6IjY1ZjFhOGRkZmE0MDQ2MDEyZTExMjFiNiIsInVwZGF0ZWRfYXQiOiIyMDI0LTAzLTEzVDEzOjIzOjQxLjkwOVoiLCJ1cmwiOiJodHRwczovL3d3dy50aGVtb3ZpZWRiLm9yZy9yZXZpZXcvNjVmMWE4ZGRmYTQwNDYwMTJlMTEyMWI2In1dLCJ0b3RhbF9wYWdlcyI6MSwidG90YWxfcmVzdWx0cyI6MX0=
+  recorded_at: Fri, 22 Mar 2024 16:09:26 GMT
 recorded_with: VCR 6.2.0
