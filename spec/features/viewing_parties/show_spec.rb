@@ -15,17 +15,18 @@ RSpec.describe 'Viewing Partys Show Page', type: :feature do
         vote_average: 6.894,
         runtime: 94
       }
-  
       @movie_kfp = Movie.new(@data_movie)
+      @viewing_party = ViewingParty.create!(duration: "100", date: "04/01/2024", start_time: "7:00")
     end
 
     # User story #5
     it 'displays video providers photos and information avaiable', :vcr do
-      # As a user, When I visit a Viewing Party's show page (`/users/:user_id/movies/:movie_id/viewing_party/:id`), 
-      visit new_user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id)
+      # As a user, When I visit a Viewing Party's show page (`/users/:user_id/movies/:movie_id/viewing_party/:id`),
+      visit user_movie_viewing_party_path(@user_tommy.id, @movie_kfp.id, @viewing_party.id)
       # I should see 
       # - logos of video providers for where to buy the movie (e.g. Apple TV, Vudu, etc.)
       expect(page).to have_content("Buy the movie here:")
+      expect(page).to have_content("Cineplex")
       # - logos of video providers for where to rent the movie (e.g. Amazon Video, DIRECTV, etc.)
       expect(page).to have_content("Rent the movie here:")
       # And I should see a data attribution for the JustWatch platform that reads: 
