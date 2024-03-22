@@ -1,18 +1,14 @@
-<h1><%= "#{@user.name}'s Dashboard" %></h1><br>
+<h1>Viewing Party</h1>
+<h3><%= "#{@user.name}'s Dashboard" %></h3>
 
-<section class="viewing_parties">
-  <% @user.viewing_parties.each do |party| %>
-    <div class="viewing_party">
-         Party Time: <%= party.date %> at <%= party.start_time %><br>
-         Host: <%= party.find_host.name %><br>
-         Who's Coming? <br/>
+<%= button_to "Discover Page", user_discover_index_path(@user.id), method: :get %>
 
-         <ol>
-            <% party.users.each do |attendee| %>
-               <li><%= attendee.name %> </li>
-            <% end %>
-         </ol>
-
-    </div><br>
-  <% end %>
-</section>
+<% @user.viewing_parties.each do |party| %>
+  <div class="viewing_party-<% party.id %>">
+  <%!binding.pry%>
+    <%= image_tag(party.movie.poster_path) %> 
+    <%= link_to party.movie.title, user_movie_path(@user.id, party.movie.id) %>
+    Party Time: <%= party.date %> at <%= party.start_time %><br>
+    <%= party.invite_side %>
+  </div><br>
+<% end %>

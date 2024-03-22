@@ -19,8 +19,8 @@ Movie Title <%= @facade_movie.title %>
 
   <h4>Invite Other Users</h4>
   <% @guests.each do |guest| %>
-    <%= f.check_box :guest_1, { multiple: true }, guest.id, nil %>
-    <%= f.label "guest_#{guest.id}", "#{guest.name}(#{guest.email})" %><br>
+    <%= f.check_box :"guest_#{guest.id}", { multiple: true }, nil %>
+    <%= f.label false, "#{guest.name}(#{guest.email})" %><br>
   <% end %>
 
   <%= f.submit "Create Party"%>
