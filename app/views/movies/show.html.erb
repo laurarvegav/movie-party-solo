@@ -30,3 +30,5 @@ Actor: <%= cast[:name] %>, character: <%= cast[:character]%>
   Author <%= review[:author] %> said <%= review[:content] %><br>
 <% end %>
 </p>
+
+<%= button_to "Get Similar Movies", ser_movie_similar_index_path(@user.id, @facade_movie.id), method: :get %>
