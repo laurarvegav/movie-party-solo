@@ -35,6 +35,10 @@ class MovieService
     get_url("id", "#{id}/watch/providers")
   end
 
+  def find_similar_movies(id)
+    get_url("id", "#{id}/similar")
+  end
+
   def uri_kind(kind)
     if kind == "top"
       "/discover/movie"
