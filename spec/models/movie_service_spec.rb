@@ -56,5 +56,14 @@ RSpec.describe MovieService do
       expect(parsed_reviews).to be_a(Hash)
       expect(parsed_reviews[:results]).to be_an(Array)
     end
+
+    it "finds providers with movie id", :vcr do
+      id = 1011985
+      parsed_providers = MovieService.new.find_movie_providers(id)
+
+      expect(parsed_providers[:id]).to eq(id)
+      expect(parsed_providers).to be_a(Hash)
+      expect(parsed_providers[:results]).to be_a(Hash)
+    end
   end
 end
