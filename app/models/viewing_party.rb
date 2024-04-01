@@ -14,8 +14,6 @@ class ViewingParty < ApplicationRecord
   end
 
   def party_movie
-    return unless movie_id
-
     facade = ServiceFacade.new(user: host, movie_id: movie_id)
     facade.movies.first
   end
