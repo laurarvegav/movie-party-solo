@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Similar movies page', type: :feature do
   describe 'As a user' do
     before(:each) do
-      @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com')
+      @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'testt123')
+      
       @data_movie_kfp = {
       id: 1011985,
       original_title: "Kung Fu Panda 4",

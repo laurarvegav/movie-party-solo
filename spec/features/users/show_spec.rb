@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'User Dashboard', type: :feature do
   describe 'As a user' do
     before(:each) do
-      @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com')
-      @user_sam = User.create!(name: 'Sam', email: 'sam@email.com')
-      @user_meg = User.create!(name: 'Meg', email: 'meg@turing.edu')
-      @user_erin = User.create!(name: 'Erin', email: 'erin@turing.edu')
+      @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'testt123')
+      @user_sam = User.create!(name: 'Sam', email: 'sam@email.com', password: 'tests123')
+      @user_meg = User.create!(name: 'Meg', email: 'meg@turing.edu', password: 'me123')
+      @user_erin = User.create!(name: 'Erin', email: 'erin@turing.edu', password: 'er123')
 
       @data_movie = {
         id: 1011985,
@@ -39,7 +39,6 @@ RSpec.describe 'User Dashboard', type: :feature do
     it 'shows the viewing parties that the user has been invited to, and the ones the user is hosting with details', :vcr do
       # As a user, When I visit a user dashboard ('/user/:user_id'),
       visit user_path(@user_tommy.id)
-      save_and_open_page
       # I should see the viewing parties that the user has been invited to with the following details:
       # - Movie Title, which links to the movie show page
       within(".viewing_party-#{@viewing_party_t.id}") do

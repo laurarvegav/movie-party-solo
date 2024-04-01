@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Movies Results Page', type: :feature do
   describe 'As a user' do
     before(:each) do
-      @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com')
-      @user_sam = User.create!(name: 'Sam', email: 'sam@email.com')
+      @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'testt123')
+      @user_sam = User.create!(name: 'Sam', email: 'sam@email.com', password: 'tests123')
     end
 
     # User Story #2

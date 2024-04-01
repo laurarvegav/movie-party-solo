@@ -26,7 +26,6 @@ class ViewingPartiesController < ApplicationController
         # Associate selected guests with the viewing party
         
         selected_guests = selected_guests_ids.map { |id| User.find(id) }
-        @viewing_party.add_guests(selected_guests)
         
         selected_guests.each do |guest|
           user.user_parties << UserParty.create(user: guest, viewing_party: @viewing_party)
