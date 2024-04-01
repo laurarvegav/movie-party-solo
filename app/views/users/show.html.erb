@@ -4,10 +4,21 @@
 <%= button_to "Discover Page", user_discover_index_path(@user.id), method: :get %>
 
 <% @user.viewing_parties.each do |party| %>
-  <div class="viewing_party-<% party.id %>">
-    <!%= image_tag(party.movie.poster_path) %> 
-    <!%= link_to party.movie.title, user_movie_path(@user.id, party.movie.id) %>
+  <div class="viewing_party-<%= party.id %>">
+    <%= image_tag(party.party_movie.poster_path, size: "100x100") %><br> 
+
+    <%= link_to party.party_movie.title, user_movie_path(@user.id, party.movie_id) %><br>
+
     Party Time: <%= party.date %> at <%= party.start_time %><br>
-    <!%= party.invite_side %>
+
+    Hosted by: <%= party.host.name %><br>
+
+    Invited: <% party.users.each do |guest| %>
+      <% if guest == @user %>
+        <b><%= guest.name %></b>
+      <% else %>
+        <%= guest.name %>
+      <% end %>
+    <% end %>
   </div><br>
 <% end %>
