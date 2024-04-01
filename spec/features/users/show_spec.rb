@@ -18,15 +18,15 @@ RSpec.describe 'User Dashboard', type: :feature do
       }
       @movie_kfp = Movie.new(@data_movie)
       
-      @viewing_party_t = ViewingParty.new(duration: 175, date: "2023-12-01", start_time: "07:25", movie_id: @movie_kfp.id)
+      @viewing_party_t = ViewingParty.new(duration: 175, date: "2024-12-01", start_time: "07:25", movie_id: @movie_kfp.id)
 
       @viewing_party_e = ViewingParty.new(duration: 175, date: "2023-12-01", start_time: "07:25", movie_id: @movie_kfp.id)
       
       @viewing_party_t.host_user_id = @user_tommy.id
-      #@viewing_party_t.guests = [@user_sam, @user_meg, @user_erin]
+      @viewing_party_t.users << [@user_sam, @user_meg, @user_erin]
       
       @viewing_party_e.host_user_id = @user_erin.id
-      #@viewing_party_e.guests = [@user_sam, @user_meg, @user_tommy]
+      @viewing_party_e.users << [@user_sam, @user_meg, @user_tommy]
       
       @viewing_party_t.save
       @viewing_party_e.save
@@ -42,29 +42,34 @@ RSpec.describe 'User Dashboard', type: :feature do
       save_and_open_page
       # I should see the viewing parties that the user has been invited to with the following details:
       # - Movie Title, which links to the movie show page
-      expect(page).to have_link(@viewing_party_t.party_movie.title)
-      # - Date and Time of Event
-      expect(page).to have_content("Party Time: #{@viewing_party_t.date} at #{@viewing_party_t.start_time}")
-      # - who is hosting the event
-      expect(page).to have_content("Hosted by: Tommy")
-      # - list of users invited, with my name in bold
-      expect(page).to have_content(@user_sam.name)
-      expect(page).to have_content(@user_meg.name)
-      expect(page).to have_content(@user_erin.name)
+      within(".viewing_party-#{@viewing_party_t.id}") do
+        expect(page).to have_link(@viewing_party_t.party_movie.title)
+        # - Date and Time of Event
+        expect(page).to have_content("Party Time: #{@viewing_party_t.date} at #{@viewing_party_t.start_time}")
+        # - who is hosting the event
+        expect(page).to have_content("Hosted by: Tommy")
+        # - list of users invited, with my name in bold
+        expect(page).to have_content(@user_sam.name)
+        expect(page).to have_content(@user_meg.name)
+        expect(page).to have_content(@user_erin.name)
+      end
       
       # I should also see the viewing parties that the user has created (hosting) with the following details:
       # - Movie Image
       # - Movie Title, which links to the movie show page
-      expect(page).to have_content(@viewing_party_e.party_movie.title)
-      # - Date and Time of Event
-      expect(page).to have_content(@viewing_party_e.date)
-      expect(page).to have_content(@viewing_party_e.start_time)
-      # - That I am the host of the party
-      expect(page).to have_content("Hosted by: Erin")
-      # - List of friends invited to the viewing party
-      expect(page).to have_content(@user_sam.name)
-      expect(page).to have_content(@user_meg.name)
-      expect(page).to have_content(@user_erin.name)
+      within(".viewing_party-#{@viewing_party_e.id}") do
+        expect(page).to have_content(@viewing_party_e.party_movie.title)
+        # - Date and Time of Event
+        expect(page).to have_content(@viewing_party_e.date)
+        expect(page).to have_content(@viewing_party_e.start_time)
+        # - That I am the host of the party
+        expect(page).to have_content("Hosted by: Erin") 
+        
+        # - List of friends invited to the viewing party
+        expect(page).to have_content(@user_sam.name)
+        expect(page).to have_content(@user_meg.name)
+        expect(page).to have_content(@user_erin.name)
+      end
     end
   end
 end

@@ -33,10 +33,6 @@ class ViewingParty < ApplicationRecord
     facade.movies.first
   end
 
-  def guests
-    users.delete(host)
-  end
-
   def invite_side_msg(user)
     if host == user
       "You are the host"
