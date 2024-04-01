@@ -5,9 +5,12 @@
 
 <% @user.viewing_parties.each do |party| %>
   <div class="viewing_party-<% party.id %>">
-    <!%= image_tag(party.movie.poster_path) %> 
-    <!%= link_to party.movie.title, user_movie_path(@user.id, party.movie.id) %>
+    <%= image_tag(party.party_movie.poster_path) %><br> 
+    <%= link_to party.party_movie.title, user_movie_path(@user.id, party.movie_id) %><br>
     Party Time: <%= party.date %> at <%= party.start_time %><br>
-    <!%= party.invite_side %>
+    Hosted By: <%= party.host.name %><br>
+    Invited: <% party.guests do |guest| %>
+      <b><%= guest.name %></b>
+    <% end %>
   </div><br>
 <% end %>

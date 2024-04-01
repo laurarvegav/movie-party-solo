@@ -19,8 +19,7 @@ class ViewingPartiesController < ApplicationController
       redirect_to new_user_movie_viewing_party_path(user.id, movie.id), alert: "Error: Party date can't be empty"
 
     else
-      @viewing_party = ViewingParty.new(duration: params[:party_duration], date: params[:select_date], start_time: params[:start_time])
-      @viewing_party.add_attributes(movie, user)
+      @viewing_party = ViewingParty.new(duration: params[:party_duration], date: params[:select_date], start_time: params[:start_time], movie_id: movie.id, host_user_id: user.id)
   
       # Save the viewing party
       if @viewing_party.save
