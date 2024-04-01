@@ -13,7 +13,7 @@ RSpec.describe UserParty, type: :model do
 
   describe '#invite_side' do
     it 'returns "Hosting" for host user parties' do
-      user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com')
+      user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'testt123')
       viewing_party_t = user_tommy.viewing_parties.create!(duration: "100", date: "04/01/2024", start_time: "7:00")
       user_party_t = UserParty.create!(user: user_tommy, viewing_party: viewing_party_t, host: true)
       
@@ -21,7 +21,8 @@ RSpec.describe UserParty, type: :model do
     end
 
     it 'returns "Invited" for invited user parties' do
-      user_erin = User.create!(name: 'Erin', email: 'erin@turing.edu')
+      user_erin = User.create!(name: 'Erin', email: 'erin@turing.edu', password: 'testt123')
+      
       viewing_party_e = user_erin.viewing_parties.create!(duration: "100", date: "04/01/2024", start_time: "7:00")
       user_party_e = UserParty.create!(user: user_erin, viewing_party: viewing_party_e, host: false)
       

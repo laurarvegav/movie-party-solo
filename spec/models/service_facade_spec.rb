@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ServiceFacade do
   before do
-    @user_sam = User.create!(name: 'Sam', email: 'sam@email.com')
+    @user_sam = User.create!(name: 'Sam', email: 'sam@email.com', password: 'tests123')
     @facade = ServiceFacade.new(@user_sam)
     @facade_movie_title = ServiceFacade.new(@user_sam, "Kung Fu Panda 4")
     @facade_movie_id = ServiceFacade.new(@user_sam, 1011985)
