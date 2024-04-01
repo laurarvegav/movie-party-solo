@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Root Page, Welcome Index', type: :feature do
    describe 'When a user visits the root path "/"' do
       before(:each) do
-         @user_1 = User.create!(name: 'Sam', email: 'sam_t@email.com')
-         @user_2 = User.create!(name: 'Tommy', email: 'tommy_t@gmail.com')
-
+         @user_tommy = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'testt123')
+         
          visit root_path
       end
 
@@ -31,6 +30,12 @@ RSpec.describe 'Root Page, Welcome Index', type: :feature do
          expect(page).to have_link("Home")
       end
 
-     
+      # User Story #3 - Logging In Happy Path
+      it "They see a link to Log In to go to the login page" do
+         expect(page).to have_link("Log In")
+         #I'm taken to a Log In page ('/login') where I can input my unique email and password.
+         click_link 'Log In'
+         expect(current_path).to eq(login_path)
+      end
    end
 end
