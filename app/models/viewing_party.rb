@@ -18,11 +18,4 @@ class ViewingParty < ApplicationRecord
     facade.movies.first
   end
 
-  def invite_side_msg(user)
-    if host == user
-      "You are the host"
-    else
-      "You are invited"
-    end
-  end
 end

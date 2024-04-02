@@ -42,7 +42,7 @@ RSpec.describe ViewingParty, type: :model do
       expect(viewing_party.host).to eq(@user_tommy)
     end
 
-    it "party_movie returns a movie object when given a movie_id", :vcr do
+    it "party_movie returns a movie object", :vcr do
       expect(viewing_party.party_movie).to be_a(Movie)
     end
   end
