@@ -3,6 +3,7 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user.id), method: :get %>
 
+<h4>Location: <%= cookies.encrypted[:location] %></h4>
 <% @user.viewing_parties.each do |party| %>
   <div class="viewing_party-<%= party.id %>">
     <%= image_tag(party.party_movie.poster_path, size: "100x100") %><br> 
@@ -22,3 +23,5 @@
     <% end %>
   </div><br>
 <% end %>
+
+<%= button_to "Log out", login_path, method: :get %>
