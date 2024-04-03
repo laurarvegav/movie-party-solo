@@ -25,19 +25,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 22 Mar 2024 15:50:17 GMT
+      - Wed, 03 Apr 2024 21:52:25 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=17985
+      - public, max-age=5856
       X-Memc:
       - HIT
       X-Memc-Key:
       - 50e98f0e696d81b989885f57a252d149
       X-Memc-Age:
-      - '8988'
+      - '21623'
       X-Memc-Expires:
-      - '17985'
+      - '5856'
       Etag:
       - W/"fe1de52082965635b4e651f5afa831eb"
       Vary:
@@ -46,19 +46,19 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8EZMkE0GfmXfgckOFlvyYa9JBW5hYFiAoPOX0rSJj1zoh-HAoAlwYQ==
+      - S8TfCSFhhAj6BV4oIYE0_3JoDp-69kTw_x2ravANhyh-qpvYqK-ouQ==
       Age:
-      - '1152'
+      - '1503'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1011985,"results":{"CA":{"link":"https://www.themoviedb.org/movie/1011985-kung-fu-panda-4/watch?locale=CA","buy":[{"logo_path":"/d1mUAhpJpxy0YMjwVOZ4lxAAbeT.jpg","provider_id":140,"provider_name":"Cineplex","display_priority":15}]}}}'
-  recorded_at: Fri, 22 Mar 2024 16:09:29 GMT
+  recorded_at: Wed, 03 Apr 2024 22:17:28 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/1011985/watch/providers?api_key=<API_KEY>
@@ -84,19 +84,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 22 Mar 2024 15:50:17 GMT
+      - Wed, 03 Apr 2024 21:52:25 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=17985
+      - public, max-age=5856
       X-Memc:
       - HIT
       X-Memc-Key:
       - 50e98f0e696d81b989885f57a252d149
       X-Memc-Age:
-      - '8988'
+      - '21623'
       X-Memc-Expires:
-      - '17985'
+      - '5856'
       Etag:
       - W/"fe1de52082965635b4e651f5afa831eb"
       Vary:
@@ -105,17 +105,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 3b_LOyJy6tJMigrgq23ZGzg2_wSVptp9TDch7SQntfjdOETrW7U6xg==
+      - 1N9n-WTIVn1DQWB-pOSfk6XUTM0H0telEm8zsIztj1wmB2qufI5hXA==
       Age:
-      - '1152'
+      - '1503'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1011985,"results":{"CA":{"link":"https://www.themoviedb.org/movie/1011985-kung-fu-panda-4/watch?locale=CA","buy":[{"logo_path":"/d1mUAhpJpxy0YMjwVOZ4lxAAbeT.jpg","provider_id":140,"provider_name":"Cineplex","display_priority":15}]}}}'
-  recorded_at: Fri, 22 Mar 2024 16:09:29 GMT
+  recorded_at: Wed, 03 Apr 2024 22:17:28 GMT
 recorded_with: VCR 6.2.0

@@ -25,36 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 22 Mar 2024 15:50:17 GMT
+      - Wed, 03 Apr 2024 21:52:19 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=19841
+      - public, max-age=7583
       X-Memc:
       - HIT
       X-Memc-Key:
       - ccf05165fa7a39f820d96a98dd1845c8
       X-Memc-Age:
-      - '1801'
+      - '20364'
       X-Memc-Expires:
-      - '19841'
+      - '7583'
       Etag:
-      - W/"0ae2659249d9d8c0b703c2e09e877a15"
+      - W/"f980d73396bb1bcee841200d8f764ded"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a44b9db7a2d103360945ab52619e5016.cloudfront.net (CloudFront)
+      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - BxnQA5oN0RIBCgm6yUouLUTC4t8qSvuQSuvprbyl49FHK1NDIvFM7w==
+      - VHN7XdelfBUHVEJPFz7DgfAvIE1qazwFchsaj6VDYSkxywySnMNh5A==
       Age:
-      - '1500'
+      - '923'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg","belongs_to_collection":{"id":77816,"name":"Kung
@@ -62,11 +62,9 @@ http_interactions:
         Fu Panda 4","overview":"Po is gearing up to become the spiritual leader of
         his Valley of Peace, but also needs someone to take his place as Dragon Warrior.
         As such, he will train a new kung fu practitioner for the spot and will encounter
-        a villain called the Chameleon who conjures villains from the past.","popularity":5151.423,"poster_path":"/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg","production_companies":[{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
-        Animation","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
-        Pictures","origin_country":"US"},{"id":214225,"logo_path":null,"name":"Pearl
-        Studio","origin_country":"CN"}],"production_countries":[{"iso_3166_1":"CN","name":"China"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"2024-03-02","revenue":176000000,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
-        Fu Panda 4","video":false,"vote_average":6.86,"vote_count":232}'
-  recorded_at: Fri, 22 Mar 2024 16:15:17 GMT
+        a villain called the Chameleon who conjures villains from the past.","popularity":2805.537,"poster_path":"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg","production_companies":[{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2024-03-02","revenue":347255055,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Kung
+        Fu Panda 4","video":false,"vote_average":6.798,"vote_count":529}'
+  recorded_at: Wed, 03 Apr 2024 22:07:42 GMT
 recorded_with: VCR 6.2.0
