@@ -82,4 +82,6 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   # Will delete cassettes and rerun when the interval is met
   config.default_cassette_options = { re_record_interval: 30.days }
+  config.ignore_localhost = true
 end
+Capybara.default_driver = :selenium
