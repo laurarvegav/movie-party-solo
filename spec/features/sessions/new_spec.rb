@@ -60,9 +60,15 @@ RSpec.describe 'Users Log In Form', type: :feature do
       # I still see my location that I entered previously already typed into the Location field.
       expect(page).to have_field('Location', with: 'Denver, CO')
     end
+  end
+
+  describe 'As a logged-in user' do
+    before do
+      @user_sam = User.create!(name: 'Sam', email: 'sam@email.com', password: 'tests123')
+    end
 
     #Sessions Challenge
-    it 'keeps a session even when user navigates to a different website' do
+    it 'keeps a session even when user navigates to a different website', :js, :vcr do
       # As a user when I log in successfully
       visit login_path
       
@@ -72,11 +78,34 @@ RSpec.describe 'Users Log In Form', type: :feature do
       click_button 'Log in'
       user = User.find_by( email: 'sam@email.com' )
       # and then leave the website and navigate to a different website entirely,
-      visit root_path
+      # Simulating leaving the website by executing JavaScript to redirect
+      page.execute_script("window.location.href = 'http://www.google.com'")
+      sleep 2
+      #expect(current_path).to eq("http://www.google.com")
       # Then when I return to *this* website,
-      visit user_path(user)
+      visit root_path
       # I see that I am still logged in. 
-      expect(page).to have_content("#{user.name}'s Dashboard")
+      expect(page).to have_link('Log Out')
+    end
+
+    #Log out a user
+    xit 'shows log out button only when a user is logged in and otherwise shows a Create an Account button' do
+      # As a logged-in user 
+      visit login_path
+      
+      fill_in :email, with: 'sam@email.com'
+      fill_in :password, with: 'tests123'
+      fill_in :location, with: 'Denver, CO'
+      click_button 'Log in'
+      user = User.find_by( email: 'sam@email.com' )
+      # When I visit the landing page
+      visit root_path
+      # I no longer see a link to Log In or Create an Account
+      # But I only see a link to Log Out.
+      # When I click the link to Log Out,
+      # I'm taken to the landing page
+      # And I see that the Log Out link has changed back to a Log In link
+      # And I still see the Create an Account button.
     end
   end
 end
