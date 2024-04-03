@@ -26,4 +26,10 @@ RSpec.describe User, type: :model do
     it { should have_many :user_parties }
     it { should have_many(:viewing_parties).through(:user_parties) }
   end
+
+  describe 'Enums' do
+    it 'enums tests' do
+      should define_enum_for(:role).with_values(["default", "manager", "admin"])
+    end
+  end
 end
