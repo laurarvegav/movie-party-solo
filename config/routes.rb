@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-
-
   root "welcome#index"
   get '/register', to: 'users#new', as: 'register_user'
-
-  get "/login", to: 'users#login_form'
-  post "/login", to: 'users#login'
 
   resources :users, only: [:show, :create] do
     resources :discover, only: :index
@@ -16,5 +8,13 @@ Rails.application.routes.draw do
       resources :similar, only: :index, controller: "similar_movies"
       resources :viewing_parties, only: [:new, :create, :show]
     end
+  end
+  
+  get "/login", to: 'sessions#new'
+  post "/login", to: 'sessions#create'
+  delete "/logout", to: 'sessions#destroy'
+
+  namespace :admin do
+    get "/dashboard", to: "dashboard#index"
   end
 end
