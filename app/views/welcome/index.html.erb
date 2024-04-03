@@ -1,4 +1,3 @@
-<%= cookies.signed[:greeting] %>
 <h1>Viewing Party</h1>
 
 <h2>Existing Users</h2>
@@ -7,7 +6,11 @@
       <li><%= link_to user.email, "users/#{user.id}" %></li>
    <% end %>
 </ul>
+<% if session[:user_id] %>
+   <%= cookies.signed[:greeting] %>
+   <%= link_to 'Log Out', login_path %><br>
+<% else %>
+   <%= button_to 'Create New User', register_user_path, method: :get, class: "btn btn-lg btn-outline-secondary" %><br>
 
-<%= button_to 'Create New User', register_user_path, method: :get, class: "btn btn-lg btn-outline-secondary" %><br>
-
-<%= link_to 'Log In', login_path %><br>
+   <%= link_to 'Log In', login_path %><br>
+<% end %>
