@@ -39,6 +39,7 @@ RSpec.describe 'Users Log In Form', type: :feature do
       expect(page).to have_content('Sorry, incorrect credentials')
     end
 
+    #Cookies Challenge
     it 'allows user to enter location and keeps it on the landing page on different sessions' do
       #As a user, when I go to the login page (/login)
       visit login_path
@@ -58,6 +59,24 @@ RSpec.describe 'Users Log In Form', type: :feature do
       visit login_path
       # I still see my location that I entered previously already typed into the Location field.
       expect(page).to have_field('Location', with: 'Denver, CO')
+    end
+
+    #Sessions Challenge
+    it 'keeps a session even when user navigates to a different website' do
+      # As a user when I log in successfully
+      visit login_path
+      
+      fill_in :email, with: 'sam@email.com'
+      fill_in :password, with: 'tests123'
+      fill_in :location, with: 'Denver, CO'
+      click_button 'Log in'
+      user = User.find_by( email: 'sam@email.com' )
+      # and then leave the website and navigate to a different website entirely,
+      visit root_path
+      # Then when I return to *this* website,
+      visit user_path(user)
+      # I see that I am still logged in. 
+      expect(page).to have_content("#{user.name}'s Dashboard")
     end
   end
 end
