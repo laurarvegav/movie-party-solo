@@ -19,7 +19,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       # - Title (As a Link to the Movie Details page (see story #3))
       expect(page).to have_link("Damsel")
       # - Vote Average of the movie
-      expect(page).to have_content("Damsel Vote average: 7.19")
+      expect(page).to have_content("Damsel Vote average: 7.16")
 
       # I should also see a button to return to the Discover Page.
       click_button("Discover Page")
@@ -28,7 +28,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       fill_in(:movie_title, with: "Kung")
       click_button("Find Movies")
       expect(current_path).to eq(user_movies_path(@user_tommy.id))
-      expect(page).to have_content("Kung Fu Panda 4 Vote average: 6.9")
+      expect(page).to have_content("Kung Fu Panda 4 Vote average: 6.8")
 
       expect(page).to have_button("Discover Page")
     end

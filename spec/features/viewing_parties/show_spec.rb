@@ -16,7 +16,7 @@ RSpec.describe 'Viewing Partys Show Page', type: :feature do
         runtime: 94
       }
       @movie_kfp = Movie.new(@data_movie)
-      @viewing_party = ViewingParty.create!(duration: "100", date: "04/01/2024", start_time: "7:00")
+      @viewing_party = ViewingParty.create!(duration: "100", date: "04/01/2024", start_time: "7:00", host_user_id: @user_tommy.id, movie_id: @movie_kfp.id)
     end
 
     # User story #5

@@ -13,11 +13,11 @@ RSpec.describe 'Similar movies page', type: :feature do
       }
 
       @data_movie_lwm = {
-      id: 826680,
-      original_title: "Follow a group of children who are evacuated to a Yorkshire village during the Second World War, where they encounter a young soldier who, like them, is far away from home.",
-      vote_average: 6.820,
+      id: 18707,
+      original_title: "夏日福星",
+      vote_average: 6.6,
       poster_path: "https://media.themoviedb.org/t/p/original/dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg",
-      release_date: "2022-07-15"
+      release_date: "1985-08-15 "
       }
 
       @movie_kfp = Movie.new(@data_movie_kfp)
@@ -25,7 +25,7 @@ RSpec.describe 'Similar movies page', type: :feature do
     end
 
     # User story 6
-    it 'displays a a list of movies that are similar to the one provided by :movie_id with details and image', :vcr do
+    it 'displays a list of movies that are similar to the one provided by :movie_id with details and image', :vcr do
       # As a user, When I visit a Movie Details page (`/users/:user_id/movies/:movie_id`),
       visit user_movie_path(@user_tommy.id, @movie_kfp.id)
       # I see a link for "Get Similar Movies"

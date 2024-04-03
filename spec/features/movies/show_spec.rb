@@ -29,7 +29,7 @@ RSpec.describe 'Movie detail page', type: :feature do
       # - Movie Title
       expect(page).to have_content('Kung Fu Panda 4')
       # - Vote Average of the movie
-      expect(page).to have_content("Vote: 6.86")
+      expect(page).to have_content("Vote: 6.8")
       # - Runtime in hours & minutes
       expect(page).to have_content("Runtime: 1hr 34min")
       # - Genre(s) associated to movie
@@ -42,7 +42,7 @@ RSpec.describe 'Movie detail page', type: :feature do
       expect(page).to have_content(
         "Actor: Ronny Chieng, ")
       # - Count of total reviews
-      expect(page).to have_content("1 Reviews")
+      expect(page).to have_content("2 Reviews")
       # - Each review's author and information
       expect(page).to have_content("Author Chris Sawin said _Kung Fu Panda 4_ isn’t the best _Kung Fu Panda_ film, or even the best of the series’ three sequels. However, as a fourth film in a franchise, it’s a ton of fun.\r \r And though it’s action isn’t quite as entertaining as its predecessors and it’s unfortunate to see Awkwafina playing yet another thief (_Jumanji: The Next Level_ says hello), for the most part, _Kung Fu Panda 4_ happily skadooshes its way to animated greatness.\r \r **Full review:** https://bit.ly/KuFuPa4") # rubocop:disable Layout/LineLength
     end
