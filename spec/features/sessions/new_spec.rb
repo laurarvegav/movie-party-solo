@@ -89,7 +89,7 @@ RSpec.describe 'Users Log In Form', type: :feature do
     end
 
     #Log out a user
-    xit 'shows log out button only when a user is logged in and otherwise shows a Create an Account button' do
+    it 'shows log out button only when a user is logged in and otherwise shows a Create an Account button' do
       # As a logged-in user 
       visit login_path
       
@@ -98,14 +98,21 @@ RSpec.describe 'Users Log In Form', type: :feature do
       fill_in :location, with: 'Denver, CO'
       click_button 'Log in'
       user = User.find_by( email: 'sam@email.com' )
+      
       # When I visit the landing page
       visit root_path
       # I no longer see a link to Log In or Create an Account
+      expect(page).not_to have_link('Log In')
+      expect(page).not_to have_link('Create New User')
       # But I only see a link to Log Out.
       # When I click the link to Log Out,
+      click_link('Log Out')
       # I'm taken to the landing page
+      expect(current_path).to eq(root_path)
       # And I see that the Log Out link has changed back to a Log In link
+      expect(page).to have_link('Log In')
       # And I still see the Create an Account button.
+      expect(page).to have_button('Create New User')
     end
   end
 end
