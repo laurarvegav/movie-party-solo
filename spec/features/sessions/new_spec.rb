@@ -115,4 +115,13 @@ RSpec.describe 'Users Log In Form', type: :feature do
       expect(page).to have_button('Create New User')
     end
   end
+
+  describe "As a visitor" do
+    it 'does not show current users to visitors' do
+      # As a visitor When I visit the landing page
+      visit root_path
+      # I do not see the section of the page that lists existing users
+      expect(page).not_to have_content('Existing Users')
+    end
+  end
 end
