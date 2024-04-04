@@ -4,6 +4,11 @@ class ViewingPartiesController < ApplicationController
     facade = ServiceFacade.new(@user, params[:movie_id].to_i)
     @facade_movie = facade.movies
     @guests = User.all.except(@user)
+
+    if session[:user_id].nil?
+      flash[:error] = "User must be logged in or registered to create a Viewing Party"
+       redirect_to user_movie_path(@user,params[:movie_id])
+    end
   end
 
   def create
