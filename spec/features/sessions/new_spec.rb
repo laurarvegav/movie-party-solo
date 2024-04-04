@@ -114,6 +114,24 @@ RSpec.describe 'Users Log In Form', type: :feature do
       # And I still see the Create an Account button.
       expect(page).to have_button('Create New User')
     end
+
+    it 'does not show links of current users' do
+      # As a logged-in user
+      visit login_path
+      
+      fill_in :email, with: 'sam@email.com'
+      fill_in :password, with: 'tests123'
+      fill_in :location, with: 'Denver, CO'
+      click_button 'Log in'
+      user = User.find_by( email: 'sam@email.com' )
+      
+      # When I visit the landing page
+      visit root_path
+      # The list of existing users is no longer a link to their show pages
+      expect(page).not_to have_link(user.email)
+      # But just a list of email addresses
+      expect(page).to have_content(user.email)
+    end
   end
 
   describe "As a visitor" do
