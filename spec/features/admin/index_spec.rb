@@ -17,19 +17,16 @@ RSpec.describe 'Admin Dashboard', type: :feature do
       click_button 'Log in'
       # I'm taken to my admin dashboard `/admin/dashboard`
       expect(current_path).to eq(admin_dashboard_path)
-      
       # I see a list of all default user's email addresses
       within("#existing_users") do 
-        expect(page).to have_content(User.first.email)
-        expect(page).to have_content(User.last.email)
-        expect(page).to have_link("#{User.first.email}", href: "users/#{User.first.id}")
-        expect(page).to have_link("#{User.last.email}", href: "users/#{User.last.id}")
+        User.all. each do |user|
+          expect(page).to have_content(user.email)
+          expect(page).to have_link("#{user.email}", href: admin_user_path(user.id))
+        end
       end
-      
+
       # When I click on a default user's email address
-      within("#existing_users") do
-        click_link("#{@user_tommy.email}", href: "users/#{@user_tommy.id}")
-      end
+      click_link(@user_tommy.email)
       # I'm taken to the admin users dashboard. `/admin/users/:id`
       expect(current_path).to eq(admin_user_path(@user_tommy))
       # Where I see the same dashboard that particular user would see
