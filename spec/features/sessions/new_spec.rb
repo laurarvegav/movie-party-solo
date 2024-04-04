@@ -135,11 +135,46 @@ RSpec.describe 'Users Log In Form', type: :feature do
   end
 
   describe "As a visitor" do
+    before do
+      @user_sam = User.create!(name: 'Sam', email: 'sam@email.com', password: 'tests123')
+    end
+
     it 'does not show current users to visitors' do
       # As a visitor When I visit the landing page
       visit root_path
       # I do not see the section of the page that lists existing users
       expect(page).not_to have_content('Existing Users')
+    end
+
+    it 'only allows logged in users to visit a users dashboard' do
+      # As a visitor When I visit the landing page
+      visit root_path
+      # And then try to visit the user's dashboard ('/users/:user_id')
+      visit user_path(@user_sam.id)
+      # I remain on the landing page
+      expect(current_path).to eq(root_path)
+      # And I see a message telling me that I must be logged in or registered to access a user's dashboard.
+      expect(page).to have_content("User must be logged in or registered to access a user's dashboard")
+    end
+
+    it 'only allows logged in users to create a Viewing Party', :vcr do
+      data_movie = {
+        id: 1011985,
+        original_title: "Kung Fu Panda 4",
+        overview: "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
+        vote_average: 6.894,
+        runtime: 94,
+        poster_path: "/dTUTDPilI2Ozi5GeoBRczidQTaZ.jpg"
+      }
+      movie_kfp = Movie.new(data_movie)
+      
+      # As a visitor If I go to a movies show page ('/users/:user_id/movies/:movie_id')
+      visit user_movie_path(user_id: @user_sam.id, id: 1011985)
+      # And click the button to Create a Viewing Party
+      click_button('Create Viewing Party')
+      # I'm redirected back to the movies show page, and a message appears to let me know I must be logged in or registered to create a Viewing Party. 
+      expect(current_path).to eq(user_movie_path(user_id: @user_sam.id, id: 1011985))
+      expect(page).to have_content("User must be logged in or registered to create a Viewing Party")
     end
   end
 end
